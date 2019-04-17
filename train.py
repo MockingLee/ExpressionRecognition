@@ -62,9 +62,9 @@ model.compile(loss='categorical_crossentropy',
               optimizer=ada,
               metrics=['accuracy'])
 model.summary()
-batch_size = 128
+batch_size = 32
 nb_classes = 7
-nb_epoch = 1200
+nb_epoch = 50
 img_channels = 1
 
 X,y = getData()
@@ -114,4 +114,4 @@ model.fit_generator(datagen.flow(Train_x, Train_y,
                     nb_epoch=nb_epoch,
                     validation_data=(Val_x, Val_y),
                     callbacks=[checkpointer],
-                    steps_per_epoch=)
+                    )

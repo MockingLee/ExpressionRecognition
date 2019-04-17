@@ -15,8 +15,9 @@ model = keras.models.load_model(filepath="./Model.275-0.3455.hdf5")
 
 X , y = getTest()
 
-X = X.reshape(X.shape[0] , 48 , 48)
-
-score = model.evaluate(X , y , verbose=0)
-print('Test score:', score[0])
-print('Test accuracy:', score[1])
+X = X.reshape(X.shape[0] , 48 , 48 ,1)
+print(X.shape)
+print(y.shape)
+y = np_utils.to_categorical(y, 7)
+score = model.evaluate(X , y)
+print(score)
