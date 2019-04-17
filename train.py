@@ -15,7 +15,7 @@ from keras.optimizers import Adadelta
 from keras.utils import np_utils
 from keras.regularizers import l2 #, activity_l2
 import keras
-from dataset import getData
+from dataset import getTrainData
 from sklearn.model_selection import train_test_split
 from keras.preprocessing.image import ImageDataGenerator
 import numpy
@@ -62,12 +62,12 @@ model.compile(loss='categorical_crossentropy',
               optimizer=ada,
               metrics=['accuracy'])
 model.summary()
-batch_size = 32
+batch_size = 128
 nb_classes = 7
-nb_epoch = 50
+nb_epoch = 300
 img_channels = 1
 
-X,y = getData()
+X,y = getTrainData()
 
 
 Train_x, Val_x, Train_y, Val_y  = train_test_split(X, y, test_size=0.33, random_state=42)
@@ -92,7 +92,7 @@ Val_y = np_utils.to_categorical(Val_y, nb_classes)
 
 
 filepath='Model.{epoch:02d}-{val_acc:.4f}.hdf5'
-checkpointer = keras.callbacks.ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='auto')
+checkpointer = keras.callbacks.ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=False, mode='auto')
 
 datagen = ImageDataGenerator(
     featurewise_center=False,  # set input mean to 0 over the dataset
