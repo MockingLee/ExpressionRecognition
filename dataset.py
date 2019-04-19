@@ -20,7 +20,7 @@ def getTrainData():
 
 def getTest():
     data = pd.read_csv("./data/fer2013.csv")
-    data = data[15000:16000]
+    data = data.loc[data.Usage != "Training"]
     dataset_x = data.loc[:, "pixels"].str.split(" ").values.tolist()
     dataset_y = data.loc[:, "emotion"].values.tolist()
     return np.array(dataset_x).astype(int), np.array(dataset_y).astype(int)

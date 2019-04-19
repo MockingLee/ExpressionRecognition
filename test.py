@@ -5,13 +5,13 @@ from keras.optimizers import Adadelta
 from keras.utils import np_utils
 from keras.regularizers import l2 #, activity_l2
 import keras
-from dataset import getData
+from dataset import getTest
 from sklearn.model_selection import train_test_split
 from keras.preprocessing.image import ImageDataGenerator
 import numpy
 from dataset import getTest
 
-model = keras.models.load_model(filepath="./Model.275-0.3455.hdf5")
+model = keras.models.load_model(filepath="./Model.299-0.6065.hdf5")
 
 X , y = getTest()
 
