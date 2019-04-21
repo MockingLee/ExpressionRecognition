@@ -6,6 +6,7 @@ import time
 import keras
 import numpy as np
 import tensorflow as tf
+from faceDetect import getFace
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'fileDir'
@@ -37,17 +38,24 @@ def upload_file():
             new_filename = str(time.time()) + "_" + filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
             #res = getPrediction(model , os.path.join(r"C:\Users\18140\Documents\GitHub\ExpressionRecognition\WebService\fileDir" , new_filename))
-            pic = cv2.imread(UPLOAD_FOLDER + "/" + new_filename)
-            pic = cv2.resize(pic, (48, 48))
-            gray = np.array(cv2.cvtColor(pic, cv2.COLOR_BGR2GRAY))
-            X = gray
-            X = X.reshape(1, 48, 48, 1)
-            # print(X.shape)
-            # print(model)
-            with graph.as_default():
-                score = model.predict(X)
-            li = ["Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral"]
-            return li[np.argmax(score)]
+            face = getFace(UPLOAD_FOLDER + "/" + new_filename , "../haarcascade_frontalface_default.xml")
+            if face.shape[0] > 0:
+
+                #pic = cv2.imread(UPLOAD_FOLDER + "/" + new_filename)
+                print(face[0].shape)
+                pic = cv2.resize(face[0], (48, 48))
+                # cv2.imshow("face" , pic)
+                # cv2.waitKey(0)
+                gray = np.array(cv2.cvtColor(pic, cv2.COLOR_BGR2GRAY))
+                X = gray
+                X = X.reshape(1, 48, 48, 1)
+                # print(X.shape)
+                # print(model)
+                with graph.as_default():
+                    score = model.predict(X)
+                li = ["Angry", "Disgust", "Fear", "Happy", "Sad", "Surprise", "Neutral"]
+                return li[np.argmax(score)]
+
     return "Wrong Request"
 
 

@@ -11,7 +11,7 @@ from keras.preprocessing.image import ImageDataGenerator
 import numpy
 from dataset import getTest
 
-model = keras.models.load_model(filepath="./Model.299-0.6065.hdf5")
+model = keras.models.load_model(filepath="model_file/Model.300-0.5894.hdf5")
 
 X , y = getTest()
 
