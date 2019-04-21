@@ -6,7 +6,7 @@ import time
 import keras
 import numpy as np
 import tensorflow as tf
-from faceDetect import getFace
+
 
 app = Flask(__name__)
 
@@ -64,6 +64,20 @@ def upload_file():
 def cameraPic():
     return render_template("pic.html")
 
+
+def getFace(path,xml_path):
+    faceCascade = cv2.CascadeClassifier(xml_path)
+    image = cv2.imread(path)
+    faces = faceCascade.detectMultiScale(
+        image,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(30, 30),
+    )
+    res = []
+    for (x, y, w, h) in faces:
+        res.append(image[y:y+h, x:x+w])
+    return np.array(res)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
