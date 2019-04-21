@@ -1,6 +1,6 @@
 import os
 import cv2
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for
 from werkzeug.utils import secure_filename
 import time
 import keras
@@ -9,6 +9,7 @@ import tensorflow as tf
 from faceDetect import getFace
 
 app = Flask(__name__)
+
 UPLOAD_FOLDER = 'fileDir'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -58,6 +59,10 @@ def upload_file():
                 return li[np.argmax(score)]
 
     return "Wrong Request"
+
+@app.route("/cameraPic")
+def cameraPic():
+    return render_template("pic.html")
 
 
 if __name__ == '__main__':
