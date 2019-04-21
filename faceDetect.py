@@ -20,11 +20,11 @@ def getFace(path,xml_path):
     # cv2.waitKey(0)
     return np.array(res)
 
-if __name__ == '__main__':
-    face = getFace("TestPic/fear.jpg" , "haarcascade_frontalface_default.xml")
-    print(face[0].shape)
-    print(cv2.imshow("face" , face[0]))
-    cv2.waitKey(0)
+# if __name__ == '__main__':
+#     face = getFace("TestPic/fear.jpg" , "haarcascade_frontalface_default.xml")
+#     print(face[0].shape)
+#     print(cv2.imshow("face" , face[0]))
+#     cv2.waitKey(0)
 
 
 
