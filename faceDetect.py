@@ -13,18 +13,8 @@ def getFace(path,xml_path):
     res = []
     for (x, y, w, h) in faces:
         res.append(image[y:y+h, x:x+w])
-        #res.append(cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2))
-
-
-    # cv2.imshow("Faces found", image)
-    # cv2.waitKey(0)
     return np.array(res)
 
-# if __name__ == '__main__':
-#     face = getFace("TestPic/fear.jpg" , "haarcascade_frontalface_default.xml")
-#     print(face[0].shape)
-#     print(cv2.imshow("face" , face[0]))
-#     cv2.waitKey(0)
 
 
 

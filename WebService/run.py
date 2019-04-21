@@ -6,7 +6,7 @@ import time
 import keras
 import numpy as np
 import tensorflow as tf
-from faceDetect import getFace
+
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'fileDir'
@@ -38,7 +38,20 @@ def upload_file():
             new_filename = str(time.time()) + "_" + filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_filename))
             #res = getPrediction(model , os.path.join(r"C:\Users\18140\Documents\GitHub\ExpressionRecognition\WebService\fileDir" , new_filename))
-            face = getFace(UPLOAD_FOLDER + "/" + new_filename , "../haarcascade_frontalface_default.xml")
+
+            #face = getFace(UPLOAD_FOLDER + "/" + new_filename , "../haarcascade_frontalface_default.xml")
+            faceCascade = cv2.CascadeClassifier("../haarcascade_frontalface_default.xml")
+            image = cv2.imread(UPLOAD_FOLDER + "/" + new_filename)
+            faces = faceCascade.detectMultiScale(
+                image,
+                scaleFactor=1.1,
+                minNeighbors=5,
+                minSize=(30, 30),
+            )
+            res = []
+            for (x, y, w, h) in faces:
+                res.append(image[y:y + h, x:x + w])
+            face = np.array(res)
             if face.shape[0] > 0:
 
                 #pic = cv2.imread(UPLOAD_FOLDER + "/" + new_filename)
