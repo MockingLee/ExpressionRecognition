@@ -6,7 +6,7 @@ import time
 import keras
 import numpy as np
 import tensorflow as tf
-from faceDetect import getFace
+from WebService.faceDetect import getFace
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'fileDir'
