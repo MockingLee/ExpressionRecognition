@@ -43,8 +43,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="214">
-                <caret line="29" selection-start-line="29" selection-end-line="29" />
+              <first_editor relative-caret-position="92">
+                <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
               </first_editor>
               <second_editor />
             </state>
@@ -299,23 +299,23 @@
       <workItem from="1555551117527" duration="14451000" />
       <workItem from="1555634086132" duration="7232000" />
       <workItem from="1555752536985" duration="4677000" />
-      <workItem from="1555898482967" duration="13116000" />
+      <workItem from="1555898482967" duration="13356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52472000" />
+    <option name="totallyTimeSpent" value="52712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120469086" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.120469086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32790446" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.56290674" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.56290674" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37744033" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -545,8 +545,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="214">
-            <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <first_editor relative-caret-position="92">
+            <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
           </first_editor>
           <second_editor />
         </state>

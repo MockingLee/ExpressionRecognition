@@ -1,7 +1,10 @@
 # ExpressionRecognition
 
 ## Demo
-http://sfo.pkmgtdz.xyz:5000/cameraPic
+http://sfo.pkmgtdz.xyz:5000/cameraPic  
+Demo的模型Auc大概0.6在test上0.6多，模型训练epoch400次
+
+
 
 ## usage
 ```python
