@@ -13,7 +13,14 @@ def getFace(path,xml_path):
     res = []
     for (x, y, w, h) in faces:
         res.append(image[y:y+h, x:x+w])
+        cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2) #6
+
+    cv2.imwrite("")
+
     return np.array(res)
+
+if __name__ == '__main__':
+    getFace("TestPic/Surprise.jpg" , "haarcascade_frontalface_default.xml")
 
 
 

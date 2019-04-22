@@ -9,10 +9,10 @@
     <body>
 
         <div class="container" >
-            <h1>Camera API</h1>
+            <h1>Human Expression Recognition</h1>
 
-            <section class="main-content">
-                <p>A demo of the Camera API, currently implemented in Firefox and Google Chrome on Android. Choose to take a picture with your device's camera and a preview will be shown through createObjectURL or a FileReader object (choosing local files supported too).</p>
+            <section class="main-content" id="01">
+                <p>请上传RGB三通道图片，并确保人脸全部范围在图片范围内。如未识别出人脸及没有绿色矩形则无法预测。</p>
 
                 <p>
                     <input type="file" id="take-picture" accept="image/*">
@@ -27,11 +27,13 @@
 
             </section>
 
-            <p class="footer">All the code is available in the <a href="https://github.com/robnyman/robnyman.github.com/tree/master/camera-api">Camera API repository on GitHub</a>.</p>
+            <p class="footer">For more info please turn to <a href="https://github.com/MockingLee/ExpressionRecognition">ExpressionRecognition repository on GitHub</a>.</p>
+            <p>Contact : <a href="mailto:ljx971966614@gmail.com">ljx971966614@gmail.com</a></p>
         </div>
 
 
         <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery-3.4.0.js') }}"></script>
 
 
     </body>
